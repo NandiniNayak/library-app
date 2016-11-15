@@ -1,8 +1,19 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /posts
   # GET /posts.json
+  def vote
+    case current_user.voted_as_when_voted_for(@post)
+      when nil
+        @post.upvote_by current_user
+      when true 
+        @post.unvote_by current_user
+      when false
+        @post.upvote_by current_user
+    else
+    end
+  end
   def index
     @posts = Post.all
   end

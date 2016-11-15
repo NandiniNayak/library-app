@@ -7,6 +7,13 @@
 <p><%= link_to post.file_url,post.file_url,target: "_blank"%></p>
 <p><%= post.user.email%></p>
 <p><%= post.created_at.strftime("%b %d,%Y")%></p>
+<% if curret_user %>
+    <%= link_to like_post_path(post),method: :put do %>
+        <%= current_user.voted_as_when_voted_for(post) == true ? icon("heart") : icon("heart-o")%>
+    <% end %>
+<% else %>
+    <%= icon("heart-o") %>
+<% end %>
 </div>
 <% end %>
 
