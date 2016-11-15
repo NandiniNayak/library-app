@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .year-square {
   height: 150px;
@@ -18,7 +20,19 @@
   color: violet;
   padding-top: 31px;
 }
-.post-group{
-  border: 1px solid cyan;
 
+.post-group{
+  border: 10px solid purple;
+  padding: 15px;
+  border-radius: 6%;
+  font-size: 17px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  color: grey;
+}
+
+.post-title{
+  font-weight: bold;
+  font-size: 30px;
+  color: purple;
+  font-family: 'Eczar', serif;
 }
